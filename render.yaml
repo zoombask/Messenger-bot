@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: messenger-webhook
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "bash start.sh"
+    envVars:
+      - key: MSGR_PAGE_TOKEN
+        sync: false
+      - key: MSGR_VERIFY_TOKEN
+        sync: false
+      - key: MSGR_APP_SECRET
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_ADMIN_ID
+        sync: false
+      - key: GEMINI_KEY
+        sync: false
+      - key: TAVILY_KEY
+        sync: false
+      - key: SHEET_CSV_URL
+        sync: false
